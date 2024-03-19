@@ -123,7 +123,6 @@ public class MyHashMapImpl<K, V> implements MyHashMap<K, V> {
         return size;
     }
 
-
     @Override
     public Iterator<V> iterator() {
         return new Iterator<V>() {
@@ -171,7 +170,6 @@ public class MyHashMapImpl<K, V> implements MyHashMap<K, V> {
             this.key = key;
             this.value = value;
             nodes = new LinkedList<Node<K,V>>();
-
         }
         private int hash(){
            return  hashCode() % hashTable.length;
@@ -200,7 +198,6 @@ public class MyHashMapImpl<K, V> implements MyHashMap<K, V> {
             Node<?, ?> node = (Node<?, ?>) o;
             return Objects.equals(hash, node.hashCode()) && Objects.equals(key, node.key) && Objects.equals(value, node.value);
         }
-
         @Override
         public int hashCode() {
             hash = 31;
@@ -208,9 +205,4 @@ public class MyHashMapImpl<K, V> implements MyHashMap<K, V> {
             return hash;
         }
     }
-
-
-
-
-
 }
