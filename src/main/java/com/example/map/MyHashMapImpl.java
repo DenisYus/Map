@@ -9,9 +9,11 @@ public class MyHashMapImpl<K, V> implements MyHashMap<K, V> {
     private Node<K,V>[] hashTable;
     private int size = 0;
     private float threshold;
+    private final float LOAD_FACTOR = 0.75f;
+    private final int BASE_INITIAL_CAPACITY = 16;
     public MyHashMapImpl() {
-        hashTable = new Node[16];
-        threshold = hashTable.length * 0.75f;
+        hashTable = new Node[BASE_INITIAL_CAPACITY ];
+        threshold = hashTable.length * LOAD_FACTOR;
     }
 
     @Override
